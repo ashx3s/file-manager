@@ -1,13 +1,14 @@
 {
-  "name": "file-explorer",
+  "name": "file-manager",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "An interactive console for doing bash like operations in a sandbox. Exploration of file manipulation in node.",
+  "main": "app.mjs",
   "scripts": {
+		"start": "node app.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "ashx3s",
   "license": "ISC",
   "type": "commonjs"
 }
