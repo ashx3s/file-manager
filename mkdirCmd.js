@@ -1,5 +1,7 @@
 "use strict";
-
+const fs = require("node:fs/promises");
+const path = require("node:path");
+const { cwd } = require("node:process");
 async function mkdirCmd (args) {
 	if (!args || args.length === 0) {
 		console.log("Usage: mkdir <directory-name>");
@@ -8,7 +10,7 @@ async function mkdirCmd (args) {
 	let allOperationsSuccess = true;
 
 	for (const dirName of args) {
-		const dirPath = path.resolve(process.cwd(), dirName);
+		const dirPath = path.resolve(cwd(), dirName);
 		try {
 			await fs.mkdir(dirPath);
 			console.log(`Directory ${dirName} created at ${dirPath}`);

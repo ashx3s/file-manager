@@ -4,14 +4,12 @@ const path = require("node:path");
 const readline = require("node:readline/promises");
 const {stdin: input, stdout: output } = require("node:process");
 const mkdir = require("./mkdirCmd");
-const cwd = require("./cwdCmd");
+const pwd = require("./pwdCmd");
 const ls = require("./lsCmd");
 
 const rl = readline.createInterface({input, output});
 
 let exitConfirmationSignal = false;
-
-
 
 
 function updatePromptDisplay() {
@@ -35,11 +33,17 @@ async function processCommand(line) {
 	// switch statement to run commands
 	switch (command) {
 		case "mkdir":
-			await mkdir(args)
-			break
+			await mkdir(args);
+			break;
+		case "ls":
+			await ls(path);
+			break;
+		case "pwd":
+			await pwd();
+			break;
 			// error and default cases
 		case "exit":
-			rl.close()
+			rl.close();
 			return;
 		case "":
 			break
