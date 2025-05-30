@@ -1,6 +1,5 @@
 "use strict";
 
-const fs = require("node:fs/promises");
 const path = require("node:path");
 const { chdir, cwd }  = require("node:process");
 
@@ -14,6 +13,7 @@ async function cdCmd(inputArg) {
 		dir: cwd(), 
 		base: inputArg[0]
 	})
+
 	try {
 		await chdir(newPath);
 		console.log(`Current Directory: ${cwd()}`);
