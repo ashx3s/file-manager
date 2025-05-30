@@ -2,6 +2,7 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { cwd } = require("node:process");
+
 async function mkdirCmd (args) {
 	if (!args || args.length === 0) {
 		console.log("Usage: mkdir <directory-name>");
