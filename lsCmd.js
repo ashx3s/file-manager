@@ -7,12 +7,11 @@ const path = require("node:path");
 async function lsCmd(inputArg) {
 	let pathString;
 	if (typeof inputArg === "string" && inputArg.trim() !== "") {
-		pathString = path.resolve(ccwd(), inputArg.trim());
+		pathString = path.resolve(cwd(), inputArg.trim());
 		console.log(`DEBUG: using provided path: ${pathString}`);
 	} else {
 		pathString = cwd();
 	}
-	console.log(`Attempting to read ${pathString}`);
 	try {
 		const files = await readdir(pathString);
 		for (const file of files) {
