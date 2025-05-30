@@ -3,9 +3,11 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const readline = require("node:readline/promises");
 const {stdin: input, stdout: output } = require("node:process");
+const cd = require("./cdCmd");
+const cp = require("./cpCmd");
+const ls = require("./lsCmd");
 const mkdir = require("./mkdirCmd");
 const pwd = require("./pwdCmd");
-const ls = require("./lsCmd");
 
 const rl = readline.createInterface({input, output});
 
@@ -32,6 +34,9 @@ async function processCommand(line) {
 
 	// switch statement to run commands
 	switch (command) {
+		case "cd":
+			await cd(args)
+			break
 		case "mkdir":
 			await mkdir(args);
 			break;
