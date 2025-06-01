@@ -35,7 +35,10 @@ async function processCommand(line) {
 	// switch statement to run commands
 	switch (command) {
 		case "cd":
-			await cd(args)
+			await cd(args);
+			break
+		case "cp":
+			await cp(args);
 			break
 		case "mkdir":
 			await mkdir(args);
