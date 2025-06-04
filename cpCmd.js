@@ -17,7 +17,7 @@ async function cpCmd (args) {
 		if (err.code === "ENOENT") {
 			console.error(`${err.code}: the input file does not exist`, err.message);
 		} else {
-			console.error(`Error Copying File`, err.code);
+			console.error(`${err.code}: Error Copying File`, err.message);
 		}
 	}
 }
