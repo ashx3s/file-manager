@@ -8,6 +8,7 @@ const cp = require("./cpCmd");
 const ls = require("./lsCmd");
 const mkdir = require("./mkdirCmd");
 const mv = require("./mvCmd");
+const touch = require("./touchCmd");
 const pwd = require("./pwdCmd");
 
 const rl = readline.createInterface({ input, output });
@@ -50,6 +51,9 @@ async function processCommand(line) {
       break;
     case "mv":
       await mv(args);
+      break;
+    case "touch":
+      await touch(args);
       break;
     // error and default cases
     case "exit":
