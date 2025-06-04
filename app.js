@@ -10,6 +10,7 @@ const mkdir = require("./mkdirCmd");
 const mv = require("./mvCmd");
 const touch = require("./touchCmd");
 const pwd = require("./pwdCmd");
+const rm = require("./rmCmd");
 
 const rl = readline.createInterface({ input, output });
 
@@ -51,6 +52,9 @@ async function processCommand(line) {
       break;
     case "mv":
       await mv(args);
+      break;
+    case "rm":
+      await rm(args);
       break;
     case "touch":
       await touch(args);
