@@ -5,6 +5,7 @@ const readline = require("node:readline/promises");
 const { stdin: input, stdout: output } = require("node:process");
 const cd = require("./cdCmd");
 const cp = require("./cpCmd");
+const clear = require("./clearCmd");
 const ls = require("./lsCmd");
 const mkdir = require("./mkdirCmd");
 const mv = require("./mvCmd");
@@ -40,6 +41,9 @@ async function processCommand(line) {
       break;
     case "cp":
       await cp(args);
+      break;
+    case "clear":
+      clear();
       break;
     case "mkdir":
       await mkdir(args);
