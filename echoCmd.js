@@ -1,12 +1,12 @@
 "use strict";
 
-async function echoCmd(args) {
+function echoCmd(args) {
   if (!args || !args.length) {
-    console.error("No arguments provided");
+    console.warn("Usage: echo <input>...");
     return;
   }
   console.log(args.join(" "));
-  return args.join(" ");
+  process.stdout.write(args.join(" "));
 }
 
 module.exports = echoCmd;
