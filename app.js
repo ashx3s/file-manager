@@ -3,16 +3,17 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const readline = require("node:readline/promises");
 const { stdin: input, stdout: output } = require("node:process");
+const cat = require("./catCmd");
 const cd = require("./cdCmd");
 const cp = require("./cpCmd");
 const clear = require("./clearCmd");
+const echo = require("./echoCmd");
 const ls = require("./lsCmd");
 const mkdir = require("./mkdirCmd");
 const mv = require("./mvCmd");
 const touch = require("./touchCmd");
 const pwd = require("./pwdCmd");
 const rm = require("./rmCmd");
-
 const rl = readline.createInterface({ input, output });
 
 let exitConfirmationSignal = false;
@@ -44,6 +45,9 @@ async function processCommand(line) {
       break;
     case "clear":
       clear();
+      break;
+    case "echo":
+      await echo(args);
       break;
     case "mkdir":
       await mkdir(args);
