@@ -37,6 +37,9 @@ async function processCommand(line) {
 
   // switch statement to run commands
   switch (command) {
+    case "cat":
+      await cat(args);
+      break;
     case "cd":
       await cd(args);
       break;
@@ -47,7 +50,7 @@ async function processCommand(line) {
       clear();
       break;
     case "echo":
-      await echo(args);
+      echo(args);
       break;
     case "mkdir":
       await mkdir(args);
